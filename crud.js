@@ -57,11 +57,9 @@ function renderTable() {
         Fechacell.textContent = item.Fecha;
         Clientecell.textContent = item.Cliente;
         Ubicacioncell.textContent = item.Ubicacion;
-        editbutton.textContent = 'Editar';
-        eliminarbutton.textContent = 'Eliminar';
 
-        editbutton.classList.add('button', 'button-secondary');
-        eliminarbutton.classList.add('button', 'button-terciary');
+        editbutton.classList.add('button', 'button-secondary', 'fa-regular', 'fa-pen-to-square');
+        eliminarbutton.classList.add('button', 'button-terciary', 'fa-solid', 'fa-trash');
 
         editbutton.addEventListener('click', function(){
             editData(index);

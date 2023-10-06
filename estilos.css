@@ -23,6 +23,7 @@
 
     .navbar a, .navbar ul li{
         color: #ffffff;
+        margin-left: 8px;
     }
 
     .navbar img{
@@ -86,6 +87,10 @@
         color:#ffffff;
     }
 
+    .button-nav{
+        background-color: var(--primary-dark);
+        color: #ffffff;
+    }
 
 
     .button-primary{
