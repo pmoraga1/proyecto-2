@@ -5,10 +5,12 @@ const fechainput = document.getElementById('fechainput');
 const clienteinput =  document.getElementById('clienteinput');
 const ubicacioninput =  document.getElementById('ubicacioninput');
 
-/*const searchinput = document.getElementById('buscador');
+const searchinput = document.getElementById('buscador');
+
 const searchbutton = document.getElementById('searchbutton');
 
-searchbutton.addEventListener('click', handleSearch)*/
+searchbutton.addEventListener('click', handleSearch);
+
 
 const tablebody = document.getElementById('tablebody');
 
@@ -26,7 +28,7 @@ form.addEventListener('submit', function(event) {
         const newData = {IDSensor, Fecha, Cliente, Ubicacion};
         data.push(newData);
         saveDataToLocalStorage();
-        renderTable();
+        renderTable(data);
         form.reset();
         
 
@@ -45,7 +47,7 @@ function saveDataToLocalStorage() {
 
 /* limpiar contenido de table cada vez que actualice */
 
-function renderTable() {
+function renderTable(data) {
     tablebody.innerHTML = '';
     data.forEach(function(item,index) {
         const row = document.createElement('tr');
@@ -99,20 +101,37 @@ function editData(index){
     ubicacioninput.value = item.Ubicacion;
     data.splice(index,1);
     saveDataToLocalStorage();
-    renderTable();
+    renderTable(data);
 }
 
 function deleteData(index){
     data.splice(index,1);
     saveDataToLocalStorage();
-    renderTable();
+    renderTable(data);
 }
 
-/* function handleSearch(event){
-    event.preventDefault
-    alert(searchinput.value);
-}*/
+function handleSearch(event){
+    event.preventDefault();
+    const query = document.getElementById('buscador');
+    const value = normalize(query.value);
 
+    const filteredTable = data.filter((row) => {
+        return (
+          normalize(row.IDSensor).includes(value) ||
+          normalize(row.Fecha).includes(value) ||
+          normalize(row.Cliente).includes(value) ||
+          normalize(row.Ubicacion).includes(value)
+        );
+      })
+          
+      renderTable(filteredTable);
+          }
 
+function normalize(string) {
+    return string
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
 
-renderTable();
+renderTable(data);
