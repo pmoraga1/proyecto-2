@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO DE SENSORES</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+<body>
+   
+
+        <nav class="navbar navbar-expand-lg">
+          <img src="Imagenes/Logo Wenu Work2.svg">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Clientes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" hred="#">Sensores</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+        
+          <main class="container">
+            <section class="crud">
+
+                <h1 class="crud_title">REGISTRO DE SENSORES</h1>
+
+                <!-- Celdas para agregar nueva información -->
+
+                <form id="formulario" class="crud_form">
+
+                    <input type="number" placeholder="ID sensor" id="idinput" class="form_input">
+                    <input type="date" placeholder="Fecha de instalación" id="fechainput" class="form_input">
+                    <input type="text" placeholder="Cliente" id="clienteinput" class="form_input">
+                    <input type="text" placeholder="Ubicación" id="ubicacioninput" class="form_input">
+
+                    <button type="submit" id="submitbutton" class="button button-primary" >Agregar</button>
+
+                </form>
+
+                <!-- Tabla con la información -->
+
+                <table id="tablasensores" class="crud_table">
+                    <thead>
+                    <tr>
+                    <th class="table_header">ID Sensor</th>
+                    <th class="table_header">Fecha de instalación</th>
+                    <th class="table_header">Cliente</th>
+                    <th class="table_header">Ubicación</th>
+                    <th class="table_header">Acciones</th>
+                    </tr>
+                    </thead>
+
+                <!-- cuerpo de la tabla -->
+                <tbody id="tablebody" class="table_body">
+                </tbody>
+                </table>
+                </section>
+
+    </main>
+
+          <footer>
+            <img src="Imagenes/Logo Wenu Work2.svg">
+            <ul>
+              
+              <li><a href="">Politica de Privacidad</a></li>
+              <li><a href="">Términos y condiciones</a></li>
+              <li><a href="">Soporte</a></li>
+              <li>Wenu Work &copy; 2023</li>
+
+            </ul>
+              
+         
+          </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="crud.js"></script>
+
+</body>
+</html>
