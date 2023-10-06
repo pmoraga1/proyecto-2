@@ -5,6 +5,11 @@ const fechainput = document.getElementById('fechainput');
 const clienteinput =  document.getElementById('clienteinput');
 const ubicacioninput =  document.getElementById('ubicacioninput');
 
+/*const searchinput = document.getElementById('buscador');
+const searchbutton = document.getElementById('searchbutton');
+
+searchbutton.addEventListener('click', handleSearch)*/
+
 const tablebody = document.getElementById('tablebody');
 
 let data = JSON.parse(localStorage.getItem('formData')) || [];
@@ -54,7 +59,7 @@ function renderTable() {
         const eliminarbutton = document.createElement('button');
 
         IDSensorcell.textContent = item.IDSensor;
-        Fechacell.textContent = item.Fecha;
+        Fechacell.textContent = item.Fecha.split('-').reverse().join('-');
         Clientecell.textContent = item.Cliente;
         Ubicacioncell.textContent = item.Ubicacion;
 
@@ -102,5 +107,12 @@ function deleteData(index){
     saveDataToLocalStorage();
     renderTable();
 }
+
+/* function handleSearch(event){
+    event.preventDefault
+    alert(searchinput.value);
+}*/
+
+
 
 renderTable();
