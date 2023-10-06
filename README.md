@@ -4,11 +4,7 @@
 
 * [1. Intro](#1-intro)
 * [2. Caracteristicas](#2-caracteristicas)
-* [3. Uso?](#3-uso)
-* [4. Objetivos de Aprendizaje](#4-objetivos-de-aprendizaje)
-* [5. Requisitos](#5-requisitos-y-entregables)
-* [6. Criterios de evaluación](#6-criterios-de-evaluaci%C3%B3n)
-* [7. Entregas](#7-entregas)
+* [3. Uso](#3-uso)
 
 ****
 
